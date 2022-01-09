@@ -11,8 +11,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.container, HomeFragment.newInstance(), HomeFragment.TAG)
-                .addToBackStack(HomeFragment.TAG)
+                .add(R.id.container, HomeFragment.newInstance())
                 .commit()
         }
     }
