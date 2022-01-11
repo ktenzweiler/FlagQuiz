@@ -39,7 +39,8 @@ class GameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // initialize the binding here:
+        ///////////////////// initialize the binding //////////////////////////
+        //////////// uncomment line below ////////////////////////
         //binding = DataBindingUtil.inflate(inflater, R.layout.game_fragment, container, false)
 
         viewModel.flagImagePath.observe(viewLifecycleOwner, {
@@ -58,13 +59,23 @@ class GameFragment : Fragment() {
         })
 
         viewModel.gameOver.observe(viewLifecycleOwner, {
+            //////////// write your code here //////////////////
+            // check to see if it is equal to true, then call function navigateToScoresScreen(viewModel.wrongAnswers)//
 
+
+            ///////////// stop your code here ///////////////////
         })
 
         viewModel.shouldShowWrongAnswerAnimation.observe(viewLifecycleOwner, {
+            //////////// write your code here //////////////////
+            // check to see if it is equal to true, then call function showWrongAnswerAnimation()//
 
+
+            ///////////// stop your code here ///////////////////
         })
 
+        //////// change the return to be the binding root /////////////////
+        // return binding.root
         return inflater.inflate(R.layout.game_fragment, container, false)
     }
 

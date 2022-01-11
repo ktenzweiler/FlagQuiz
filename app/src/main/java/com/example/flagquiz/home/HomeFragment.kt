@@ -33,19 +33,26 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // initialize the binding here:
+        //////////////// initialize the binding ///////////////////
+        //////////// uncomment line below //////////////////////
         //binding = DataBindingUtil.inflate()
 
+        //////// change the return to be the binding root /////////////////
+        // return binding.root
         return inflater.inflate(R.layout.home_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //create a click listener for start game button
+
+        //////// create a click listener for binding.startGame button ////////////////
+        ////// uncomment line below //////////////
         //binding.startGameBtn
 
-        //create a click listener for high scores button
+
+        /////////// create a click listener for binding.highScores button ///////////////////
+        /////// uncomment line below ///////////////////////
         //binding.highScoresBtn
     }
 
