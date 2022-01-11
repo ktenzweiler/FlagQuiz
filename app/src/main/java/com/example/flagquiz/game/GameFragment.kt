@@ -61,6 +61,9 @@ class GameFragment : Fragment() {
         viewModel.gameOver.observe(viewLifecycleOwner, {
             //////////// write your code here //////////////////
             // check to see if it is equal to true, then call function navigateToScoresScreen(viewModel.wrongAnswers)//
+//            if (it) {
+//                navigateToScoresScreen(viewModel.wrongAnswers)
+//            }
 
 
             ///////////// stop your code here ///////////////////
@@ -69,13 +72,17 @@ class GameFragment : Fragment() {
         viewModel.shouldShowWrongAnswerAnimation.observe(viewLifecycleOwner, {
             //////////// write your code here //////////////////
             // check to see if it is equal to true, then call function showWrongAnswerAnimation()//
-
+//            if (it) {
+//                showWrongAnswerAnimation()
+//            }
 
             ///////////// stop your code here ///////////////////
         })
 
-        //////// change the return to be the binding root /////////////////
+        //////// return the binding root /////////////////
         // return binding.root
+
+        ////////// remove the line below  //////////////////
         return inflater.inflate(R.layout.game_fragment, container, false)
     }
 

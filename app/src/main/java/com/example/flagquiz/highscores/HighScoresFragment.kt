@@ -27,9 +27,16 @@ class HighScoresFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //initialize binding
-        // binding = DataBindingUtil.inflate()
+        ///////////////////// initialize the binding //////////////////////////
+        //////////// uncomment line below ////////////////////////
+        // binding = DataBindingUtil.inflate(inflater, R.layout.high_scores_fragment, container, false)
 
+
+        //////// return the binding root /////////////////
+        // return binding.root
+
+
+        ////////// remove the line below  //////////////////
         return inflater.inflate(R.layout.high_scores_fragment, container, false)
     }
 

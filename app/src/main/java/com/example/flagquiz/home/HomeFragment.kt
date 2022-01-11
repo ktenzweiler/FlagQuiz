@@ -35,10 +35,12 @@ class HomeFragment : Fragment() {
 
         //////////////// initialize the binding ///////////////////
         //////////// uncomment line below //////////////////////
-        //binding = DataBindingUtil.inflate()
+        //binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment, container, false)
 
-        //////// change the return to be the binding root /////////////////
+        //////// return the binding root /////////////////
         // return binding.root
+
+        ////////// remove the line below  //////////////////
         return inflater.inflate(R.layout.home_fragment, container, false)
     }
 

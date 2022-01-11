@@ -35,8 +35,14 @@ class ScoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        //binding = DataBindingUtil.inflate()
+        //////////////// initialize the binding ///////////////////
+        //////////// uncomment line below //////////////////////
+        //////binding = DataBindingUtil.inflate(inflater, R.layout.score_fragment, container, false)
 
+        //////// return the binding root /////////////////
+        // return binding.root
+
+        ////////// remove the line below  //////////////////
         return inflater.inflate(R.layout.score_fragment, container, false)
     }
 
