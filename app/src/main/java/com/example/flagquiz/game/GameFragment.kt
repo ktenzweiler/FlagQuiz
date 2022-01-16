@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
-
 import androidx.lifecycle.ViewModelProvider
 import com.example.flagquiz.R
 import com.example.flagquiz.databinding.GameFragmentBinding
@@ -41,7 +40,7 @@ class GameFragment : Fragment() {
 
         ///////////////////// initialize the binding //////////////////////////
         //////////// uncomment line below ////////////////////////
-        //binding = DataBindingUtil.inflate(inflater, R.layout.game_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.game_fragment, container, false)
 
         viewModel.flagImagePath.observe(viewLifecycleOwner, {
             it?.let {
@@ -61,9 +60,9 @@ class GameFragment : Fragment() {
         viewModel.gameOver.observe(viewLifecycleOwner, {
             //////////// write your code here //////////////////
             // check to see if it is equal to true, then call function navigateToScoresScreen(viewModel.wrongAnswers)//
-//            if (it) {
-//                navigateToScoresScreen(viewModel.wrongAnswers)
-//            }
+            if (it) {
+                navigateToScoresScreen(viewModel.wrongAnswers)
+            }
 
 
             ///////////// stop your code here ///////////////////
@@ -72,18 +71,18 @@ class GameFragment : Fragment() {
         viewModel.shouldShowWrongAnswerAnimation.observe(viewLifecycleOwner, {
             //////////// write your code here //////////////////
             // check to see if it is equal to true, then call function showWrongAnswerAnimation()//
-//            if (it) {
-//                showWrongAnswerAnimation()
-//            }
+            if (it) {
+                showWrongAnswerAnimation()
+            }
 
             ///////////// stop your code here ///////////////////
         })
 
         //////// return the binding root /////////////////
-        // return binding.root
+         return binding.root
 
         ////////// remove the line below  //////////////////
-        return inflater.inflate(R.layout.game_fragment, container, false)
+
     }
 
     private fun showWrongAnswerAnimation() {
