@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.example.flagquiz.R
 import com.example.flagquiz.ViewModelFactory
@@ -37,17 +38,24 @@ class ScoreFragment : Fragment() {
 
         //////////////// initialize the binding ///////////////////
         //////////// uncomment line below //////////////////////
-        //////binding = DataBindingUtil.inflate(inflater, R.layout.score_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.score_fragment, container, false)
 
         //////// return the binding root /////////////////
-        // return binding.root
+        return binding.root
 
         ////////// remove the line below  //////////////////
-        return inflater.inflate(R.layout.score_fragment, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val wrongAnswers = arguments?.getInt("WrongAnswers")
+
+        val correctAnswers = 15 - wrongAnswers!!
+        val score : Double = (correctAnswers.toDouble() / 15.00) * 10
+
+        val formattedAnswer = Math.round(score)
+
+        binding.score.text = "$formattedAnswer %"
     }
 }
